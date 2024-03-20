@@ -10,48 +10,62 @@
 </head>
 <body>
     <style>
+        body{
+            background-color: rgb(44, 43, 43);
+        }
         .row button{
             width: 4rem;
             height: 3rem;
             font-weight: 800;
             font-size: 20px;
+            background-color: black;
+            color: grey;
+            border: none;
         }
     </style>
-    <div class="container text-center mt-5" style="width: 500px;height: 500px; background-color: bisque;" >
+
+    <div class="text-center mt-5 text-light"><h1>Calculator</h1></div>
+    <div class="container text-center mt-5" style="width: 300px;height: 450px; background-color: rgb(29, 28, 28); box-shadow: 0 4px 8px 0 rgba(51, 49, 49, 0.2), 0 6px 20px 0 rgba(51, 49, 49, 0.2);" >
         <div class="row">
-            <input type="text" name="" id="calcScreen" placeholder="0" style="height: 70px; width: 450px; border: none;" class="mt-3 ms-4">
+            <input type="text" name="" id="calcScreen" placeholder="0" style="height: 60px; width: 250px; border: none; border-radius: 10px;" class="mt-3 ms-4">
         </div>
        
-        <div class="row mt-4 ">
+        <div class="row mt-3 ">
             <div class="d-flex justify-content-evenly">
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button>*</button>
+                <button onclick="displayContent('7')" id="seven">7</button>
+                <button onclick="displayContent('8')" id="eight">8</button>
+                <button onclick="displayContent('9')" id="nine">9</button>
+                <button onclick="displayContent('*')" id="mul" class="opt">*</button>
             </div>
         </div>
-        <div class="row mt-4 ">
+        <div class="row mt-3 ">
             <div class="d-flex justify-content-evenly">
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button>-</button>
+                <button onclick="displayContent('4')" id="four">4</button>
+                <button onclick="displayContent('5')" id="five">5</button>
+                <button onclick="displayContent('6')" id="six">6</button>
+                <button onclick="displayContent('-')" id="sub" class="opt">-</button>
             </div>
         </div>
-        <div class="row mt-4 ">
+        <div class="row mt-3 ">
             <div class="d-flex justify-content-evenly">
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button>+</button>
+                <button onclick="displayContent('1')" id="one">1</button>
+                <button onclick="displayContent('2')" id="two">2</button>
+                <button onclick="displayContent('3')" id="three">3</button>
+                <button onclick="displayContent('+')" id="add" class="opt">+</button>
             </div>
         </div>
-        <div class="row mt-4 ">
+        <div class="row mt-3 ">
             <div class="d-flex justify-content-evenly">
-                <button>AC</button>
-                <button>0</button>
-                <button>/</button>
-                <button>=</button>
+                <button onclick="clearScreen()" id="ac">AC</button>
+                <button onclick="displayContent('0')" id="zero">0</button>
+                <button onclick="displayContent('/')" id="div" class="opt">/</button>
+                <button onclick="showResult()" id="equal" class="opt">=</button>
+                <!-- <button id="del">DEL</button> -->
+            </div>
+        </div>
+        <div class="row mt-3 ">
+            <div class="d-flex ">
+                <button onclick="removeLast()" id="del">DEL</button>
             </div>
         </div>
         
